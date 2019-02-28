@@ -1,0 +1,20 @@
+Detailed here are configurations that can be done to ensure full compatibility with the original script.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+If you would like to add icons to the workspaces in the taskbar, read below.
+Follow the link below to download font-awesome fonts v4.7
+https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip
+Extract the contents of the archive, navigate inside to the fonts directory, move the file ending in .ttf to ~/.fonts
+If ~/.fonts directory does not exist, please create it
+You can then head over to https://fontawesome.com/v4.7.0/cheatsheet/ and pick your favorite icons for use in the taskbar.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+If xbacklight does not work (you are not able to keybind screen brightness in ~/.config/i3/config), please add these lines to the /etc/X11/xorg.conf file.
+
+  Section "Device"
+        Identifier  "Intel Graphics" 
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+    
+Then proceed to restart your system for it to take effect.
+You should now be able to configure keybindings for controlling your screen brightness.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
