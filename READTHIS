@@ -1,0 +1,9 @@
+If xbacklight does not work (you are not able to keybind screen brightness adjustment), please add these lines to the /etc/X11/xorg.config file.
+
+  Section "Device"
+        Identifier  "Intel Graphics" 
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+    
+Then proceed to restart your system for it to take effect.
