@@ -2,6 +2,8 @@
 
 # This script installs the i3 window manager for ubuntu minimal 18.04.
 # You can install ubuntu 18.04 minimal at (http://cdimages.ubuntu.com/netboot/)
+# There is a config file included, use that for full compatibility.
+# The config file in this repo should replace the one located at ~/.config/i3/config
 
 # Install i3 along with all needed packages
 echo "This script will install the i3 window manager."
