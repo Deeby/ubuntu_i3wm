@@ -18,3 +18,20 @@ If xbacklight does not work (you are not able to keybind screen brightness in ~/
 Then proceed to restart your system for it to take effect.
 You should now be able to configure keybindings for controlling your screen brightness.
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+You can adjust the wallpapers by using feh
+
+feh --bg-scale /path/to/image
+
+You can make i3 load the wallpaper on boot up by adding this line to the i3 config file
+
+exec_always feh --bg-scale /path/to/wallpaper
+
+You can also adjust the wallpaper for the login screen by editing the /etc/lightdm/lightdm-gtk-greeter.conf file.
+Make sure that when you edit this file, you have root privileges. Use sudo for this.
+Scroll towards the bottom of the file, under [greeter], find the line that says #background=
+Change to this line
+
+background=/path/to/image
+
+Retart your system for changes to take effect.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
