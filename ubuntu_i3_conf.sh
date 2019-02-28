@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script installs the i3 window manager for ubuntu minimal 18.04.
-# You can install ubuntu 18.04 minimal at (http://cdimages.ubuntu.com/netboot/)
+# You can download ubuntu 18.04 minimal at (http://cdimages.ubuntu.com/netboot/)
 # There is a config file included, use that for full compatibility.
 # The config file in this repo should replace the one located at ~/.config/i3/config
 
@@ -53,7 +53,7 @@ echo ""
 # Installation of i3 along with all needed software for functioning desktop.
 read -p "Press enter to install i3: "
 echo
-sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter
+sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight
 
 # Install themes 
 read -p "Press enter to download and install themes: "
