@@ -35,6 +35,19 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
 
+# Set up a firewall with basic configuration. Also check if ufw is installed. If it is not, then install it.
+read -p "Press enter to proceed with firewall configuration: "
+sudo apt install ufw -y
+echo""
+echo "Denying incoming connections."
+sudo ufw default deny incoming > dev/null
+echo "Allowing outgoing connections."
+sudo ufw default allow outgoing > dev/null
+echo "Starting the firewall"
+sudo ufw enable > dev/null
+sudo ufw status verbose
+echo ""
+
 # Installation of i3 along with all needed software for functioning desktop.
 read -p "Press enter to install i3: "
 echo
@@ -49,33 +62,34 @@ cd install-gnome-themes
 ./install-gnome-themes
 cd ~
 
-# Below are commands to add to i3 config file
-clear
-echo "Add these commands to the bottom of the i3 config file."
-echo '~/.config/i3/config'
+# List applications to install, prompt the user to continue and proceed to install the applications.
+echo "The following applications will now be installed."
+echo "- compton"
+echo "- mosh"
+echo "- gedit"
+echo "- bitwarden"
+echo "- rhythmbox"
+echo "- git"
+echo "- virtualbox"
+echo "- vagrant"
+read -p "Press enter to continue: "
+sudo apt install compton
+sudo apt install mosh
+sudo apt install gedit
+sudo snap install bitwarden
+sudo apt install rhythmbox
+sudo apt install git
+sudo apt install virtualbox
+sudo apt install vagrant
 echo
-echo 'exec_always compton -b'
-echo 'exec_always wicd-client --tray'
-echo 'exec_always volumeicon'
-echo 'exec firefox'
+
+# Update the local database.
+echo "Updating the local database."
+sudo updatedb
 echo
-echo 'bindsym $mod+shift+x exec i3lock'
-echo
-echo 'bindsym $mod+shift+p exec --no-startup-id pactl --set-sink-volume 0 +5% #increase sound volume'
-echo 'bindsym $mod+shift+o exec --no-startup-id pactl --set-sink-volume 0 -5% #decrease sound volume'
-echo 'bindsym $mod+shift+m exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound'
-echo
-echo 'bindsym $mod+shift+i exec xbacklight -inc 20 # increase screen brightness'
-echo 'binsdym $mod+shift+u exec xbacklight -dec 20 # decrease screen brightness'
-echo
-read -p "Press enter to exit the script: "
+
+# Remove unecessary packages and clean up the system.
+sudo apt autoremove
+sudo apt autoclean
+
 exit 0
-
-
-
-
-
-
-
-
-
