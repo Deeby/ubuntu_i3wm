@@ -34,4 +34,27 @@ Change to this line
 background=/path/to/image
 
 Retart your system for changes to take effect.
+
+To change the background of i3lock you must provide it a .png file.
+If you need a converter to convert between image formats, you can use imagemagick which should already  be installed.
+Below is the syntax for converting a .jpg file to a .png.
+
+convert image.jpg image.png
+
+Once you have your .png, go to the i3 config file and scroll to the bottom until you get to this line.
+
+bindsym $mod+shift+x exec i3lock
+
+add this to this line --image=/path/to/image.png
+
+The line should look like this
+
+bindsym $mod+shift+x exec i3lock --image=/path/to/image.png
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+To view battery percentage in terminal add these lines to the .bashrc file
+
+BAT_0='/org/freedesktop/UPower/devices/battery_BAT0'
+alias batdisplay='upower -i ${BAT_0} | grep state; upower -i ${BAT_0} | grep percentage; upower -i ${BAT_0} | grep "time to full"'
+
+Now, when you enter batdisplay into the command line, battery percentage will be displayed.
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
