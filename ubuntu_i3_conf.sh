@@ -56,14 +56,25 @@ echo
 sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant
 sudo snap install bitwarden
 
+# Install font awesome for use in status bar
+mkdir Downloads
+cd Downloads
+wget https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip
+unzip Font-Awesome-4.7.0.zip
+cd Font-Awesome-4.7.0/fonts/
+mkdir ~/.fonts
+mv *.ttf ~/.fonts
+cd
+
 # Install themes 
 read -p "Press enter to download and install themes: "
-mkdir Downloads
 cd Downloads
 git clone https://github.com/tliron/install-gnome-themes
 cd install-gnome-themes
 ./install-gnome-themes
 cd ~
+
+# Replace i3 config file
 
 # Update the local database.
 echo "Updating the local database."
