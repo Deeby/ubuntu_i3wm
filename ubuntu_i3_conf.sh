@@ -53,7 +53,8 @@ echo ""
 # Installation of i3 along with all needed software for functioning desktop.
 read -p "Press enter to install i3: "
 echo
-sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick
+sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant
+sudo snap install bitwarden
 
 # Install themes 
 read -p "Press enter to download and install themes: "
@@ -63,27 +64,6 @@ git clone https://github.com/tliron/install-gnome-themes
 cd install-gnome-themes
 ./install-gnome-themes
 cd ~
-
-# List applications to install, prompt the user to continue and proceed to install the applications.
-echo "The following applications will now be installed."
-echo "- compton"
-echo "- mosh"
-echo "- gedit"
-echo "- bitwarden"
-echo "- rhythmbox"
-echo "- git"
-echo "- virtualbox"
-echo "- vagrant"
-read -p "Press enter to continue: "
-sudo apt install compton
-sudo apt install mosh
-sudo apt install gedit
-sudo snap install bitwarden
-sudo apt install rhythmbox
-sudo apt install git
-sudo apt install virtualbox
-sudo apt install vagrant
-echo
 
 # Update the local database.
 echo "Updating the local database."
