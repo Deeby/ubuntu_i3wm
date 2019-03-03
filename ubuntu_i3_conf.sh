@@ -31,9 +31,8 @@ then
 fi
 
 # Updates and upgrades packages.
-clear
 read -p "Press enter to update and upgrade system: "
-echo
+clear
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
