@@ -31,52 +31,63 @@ then
 fi
 
 # Updates and upgrades packages.
+clear
 read -p "Press enter to update and upgrade system: "
 echo
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
+echo
 
 # Set up a firewall with basic configuration. Also check if ufw is installed. If it is not, then install it.
 read -p "Press enter to proceed with firewall configuration: "
+clear
 sudo apt install ufw -y
-echo""
+clear
 echo "Denying incoming connections."
-sudo ufw default deny incoming > dev/null
+sudo ufw default deny incoming > /dev/null
 echo "Allowing outgoing connections."
-sudo ufw default allow outgoing > dev/null
+sudo ufw default allow outgoing > /dev/null
 echo "Starting the firewall"
-sudo ufw enable > dev/null
+sudo ufw enable > /dev/null
+echo
 sudo ufw status verbose
 echo ""
 
 # Installation of i3 along with all needed software for functioning desktop.
-read -p "Press enter to install i3: "
+read -p "Press enter to install i3 along with all software for functioning desktop: "
+clear
+sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant transmission -y
+sudo snap install bitwarden -y
 echo
-sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant transmission
-sudo snap install bitwarden
 
 # Install font awesome for use in status bar
 read -p "Press enter to download Font Awesome font: "
+clear
 cd ~
+echo "Making Downloads directory."
 mkdir Downloads
 cd Downloads
+echo "Downloading Font Awesome."
 wget https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip
 sudo unzip v4.7.0.zip
 cd Font-Awesome-4.7.0/fonts/
 mkdir ~/.fonts
 sudo mv *.ttf ~/.fonts
+echo "Installation complete."
 cd ~
+echo
 
 # Install themes 
 read -p "Press enter to download and install themes: "
+clear
 cd Downloads
+echo "Downloading themes."
 git clone https://github.com/tliron/install-gnome-themes
 cd install-gnome-themes
 ./install-gnome-themes
+echo "Installation complete."
 cd ~
-
-# Replace i3 config file
 
 # Update the local database.
 echo "Updating the local database."
@@ -84,7 +95,8 @@ sudo updatedb
 echo
 
 # Remove unecessary packages and clean up the system.
-sudo apt autoremove
-sudo apt autoclean
+echo "Cleaning up uneeded packages."
+sudo apt autoremove -y
+sudo apt autoclean -y
 
 exit 0
