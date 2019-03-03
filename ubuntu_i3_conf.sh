@@ -89,12 +89,13 @@ echo "Installation complete."
 cd ~
 
 # Update the local database.
+clear
 echo "Updating the local database."
 sudo updatedb
 echo
 
 # Remove unecessary packages and clean up the system.
-echo "Cleaning up uneeded packages."
+echo "Removing unecessary packages."
 sudo apt autoremove -y
 sudo apt autoclean -y
 
