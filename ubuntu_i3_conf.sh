@@ -57,14 +57,16 @@ sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greet
 sudo snap install bitwarden
 
 # Install font awesome for use in status bar
+read -p "Press enter to download Font Awesome font: "
+cd ~
 mkdir Downloads
 cd Downloads
 wget https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip
-unzip Font-Awesome-4.7.0.zip
+sudo unzip v4.7.0.zip
 cd Font-Awesome-4.7.0/fonts/
 mkdir ~/.fonts
-mv *.ttf ~/.fonts
-cd
+sudo mv *.ttf ~/.fonts
+cd ~
 
 # Install themes 
 read -p "Press enter to download and install themes: "
