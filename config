@@ -93,9 +93,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspace variables
-set $workspace1 '1: Terminals '
-set $workspace2 '2: Firefox '
-set $workspace10 '10: Music '
+set $workspace1 "1: Terminals"
+set $workspace2 "2: Firefox"
+set $workspace10 "10: Music"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
