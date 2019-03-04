@@ -55,9 +55,10 @@ echo ""
 
 # Installation of i3 along with all needed software for functioning desktop.
 echo "The following download is over 1GB in size."
+echo "Make sure you have enough available data to install the necessary packages."
 read -p "Press enter to install i3 along with all software for functioning desktop: "
 clear
-sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant transmission software-properties-common openssh-server mosh steam arc-theme snapd -y
+sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant transmission software-properties-common openssh-server mosh steam arc-theme snapd i3blocks -y
 sudo snap install bitwarden -y
 echo
 
