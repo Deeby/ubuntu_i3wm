@@ -74,6 +74,12 @@ echo
 #echo "Installation complete."
 #cd ~
 
+# Install Moka incons
+read "Press enter to install Moka icons: "
+clear
+sudo add-apt-repository -u ppa:snwh/ppa
+sudo apt-get install moka-icon-theme faba-icon-theme faba-mono-icons
+
 # Update the local database.
 clear
 echo "Updating the local database."
