@@ -54,32 +54,18 @@ sudo ufw status verbose
 echo ""
 
 # Installation of i3 along with all needed software for functioning desktop.
+echo "The following download is over 1GB in size."
 read -p "Press enter to install i3 along with all software for functioning desktop: "
 clear
 sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit rhythmbox git virtualbox vagrant transmission -y
 sudo snap install bitwarden -y
 echo
 
-# Install font awesome for use in status bar
-read -p "Press enter to download Font Awesome font: "
-clear
-cd ~
-echo "Making Downloads directory."
-mkdir Downloads
-cd Downloads
-echo "Downloading Font Awesome."
-wget https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip
-sudo unzip v4.7.0.zip
-cd Font-Awesome-4.7.0/fonts/
-mkdir ~/.fonts
-sudo mv *.ttf ~/.fonts
-echo "Installation complete."
-cd ~
-echo
-
 # Install themes 
 read -p "Press enter to download and install themes: "
 clear
+cd ~
+mkdir Downloads
 cd Downloads
 echo "Downloading themes."
 git clone https://github.com/tliron/install-gnome-themes
