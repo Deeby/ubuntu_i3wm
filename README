@@ -44,10 +44,3 @@ The line should look like this
 
 bindsym $mod+shift+x exec i3lock --image=/path/to/image.png
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-To view battery percentage in terminal add these lines to the .bashrc file
-
-BAT_0='/org/freedesktop/UPower/devices/battery_BAT0'
-alias batdisplay='upower -i ${BAT_0} | grep state; upower -i ${BAT_0} | grep percentage; upower -i ${BAT_0} | grep "time to full"'
-
-Now, when you enter batdisplay into the command line, battery percentage will be displayed.
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
