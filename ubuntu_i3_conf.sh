@@ -60,6 +60,12 @@ read -p "Press enter to install i3 along with all software for functioning deskt
 clear
 sudo apt install xorg xserver-xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings ubuntu-drivers-common mesa-utils mesa-utils-extra compton thunar git wicd feh i3 intel-microcode firefox lxappearance gtk-chtheme qt4-qtconfig xfce4-terminal unzip lm-sensors pulseaudio pnmixer pavumeter xbacklight imagemagick upower mosh gedit git virtualbox vagrant transmission software-properties-common openssh-server mosh steam arc-theme snapd i3blocks gnome-calculator engrampa vlc -y
 sudo snap install bitwarden -y
+
+# Installing Atom editor
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
+sudo apt install atom -y
 echo
 
 # Install themes 
